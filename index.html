@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation - Management Intergénérationnel</title>
+    <!-- Chargement de Lucide pour les icônes -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-blue: #004a99;
+            --light-blue: #eef5ff;
+            --accent-blue: #00356e;
+            --text-dark: #2c3e50;
+            --bg-gray: #f4f7f9;
+        }
+
+        body {
+            font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-gray);
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2rem 1rem 4rem 1rem; /* Padding bas augmenté pour l'effet de superposition */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            max-width: 250px; /* Logo plus grand */
+            height: auto;
+            display: block;
+            margin: 0 auto 1.5rem auto;
+            background: white; /* Fond blanc pour le JPG */
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        h1 { 
+            margin: 0; 
+            font-size: 2.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -40px auto 3rem; /* Remonte sur le header */
+            padding: 0 1rem;
+            position: relative; /* Pour passer au-dessus du header */
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        h2 { 
+            color: var(--primary-blue); 
+            border-bottom: 3px solid var(--light-blue); 
+            padding-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phase-box {
+            border-left: 6px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background: var(--light-blue);
+            border-radius: 0 10px 10px 0;
+            transition: transform 0.2s;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: var(--accent-blue);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        a.info-item:hover {
+            background: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        .info-item i-lucide {
+            margin-bottom: 10px;
+        }
+        
+        /* Style pour les liens mail/tel dans les blocs info */
+        .info-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 5px;
+            display: block;
+        }
+        .info-link:hover {
+            text-decoration: underline;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1rem;
+            border: 1px solid #ddd;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,74,153,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,74,153,0.4);
+            background: var(--accent-blue);
+        }
+
+        .footer { 
+            text-align: center; 
+            font-size: 0.9rem; 
+            color: #7f8c8d; 
+            padding: 3rem 2rem;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .card { padding: 1.5rem; }
+            .logo { max-width: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Logo avec fond blanc simple et taille augmentée -->
+    <img src="LOGO.jpg" alt="Logo Organisme" class="logo" onerror="this.src='https://via.placeholder.com/250x100?text=LOGO'">
+    <h1>Management Intergénérationnel</h1>
+    <p class="subtitle">Transformer la diversité en levier de performance durable</p>
+</header>
+
+<div class="container">
+    <!-- Section Introduction -->
+    <div class="card">
+        <h2><i data-lucide="target"></i> Pourquoi cet enjeu ?</h2>
+        <p>Aujourd'hui, <strong>3 à 4 générations</strong> collaborent au sein des mêmes équipes. L'enjeu pour le manager est de transformer les risques d'incompréhension en <strong>véritables opportunités de complémentarité</strong>, de cohésion et d'efficacité collective.</p>
+    </div>
+
+    <!-- Section Programme détaillé -->
+    <div class="card">
+        <h2><i data-lucide="book-open"></i> Le Programme (Approche 3A)</h2>
+        
+        <div class="phase-box">
+            <h3>1. APPEL – Prendre conscience</h3>
+            <ul>
+                <li>Analyse des situations terrain réelles et partages d'expériences.</li>
+                <li>Identification des frictions de communication et impacts sur les résultats.</li>
+            </ul>
+        </div>
+
+        <div class="phase-box">
+            <h3>2. APPORT – Comprendre & Agir</h3>
+            <ul>
+                <li><strong>Posture managériale :</strong> Adapter la forme sans baisser l'exigence.</li>
+                <li><strong>Communication :</strong> Clarifier les objectifs, choisir le bon canal et feedback régulier.</li>
+                <li><strong>Outils :</strong> Check-list communication et coaching situationnel.</li>
+            </ul>
+        </div>
+
+        <div class="phase-box">
+            <h3>3. ANCRAGE – Passer à l'action</h3>
+            <ul>
+                <li>Mise en place de binômes intergénérationnels (transfert de compétences).</li>
+                <li>Planification d'actions concrètes et de sessions de feedbacks.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section Localisation et Contact -->
+    <div class="card">
+        <h2><i data-lucide="info"></i> Informations & Accès</h2>
+        
+        <div class="contact-grid">
+            <!-- Bloc Lieu avec lien Google Maps intégré -->
+            <a href="https://www.google.com/maps/search/?api=1&query=48+rue+Cambon+75001+Paris" target="_blank" class="info-item">
+                <i data-lucide="map-pin"></i>
+                <div>
+                    <strong>Lieu de formation</strong><br>
+                    48 rue Cambon, 75001 Paris<br>
+                    <small style="opacity: 0.8; font-weight: normal;">(Cliquez pour ouvrir Maps)</small>
+                </div>
+            </a>
+            
+            <div class="info-item" style="cursor: default;">
+                <i data-lucide="user"></i>
+                <div>
+                    <strong>Votre Contact</strong><br>
+                    Alexis Portebois<br>
+                    <a href="tel:+33681509146" class="info-link">06 81 50 91 46</a><br>
+                    <a href="mailto:aportebois@estee.com" class="info-link">aportebois@estee.com</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carte interactive Google Maps -->
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d2624.550186358485!2d2.32431477689531!3d48.866782300115045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e326067b57b%3A0x600325433f86e92!2s48%20Rue%20Cambon%2C%2075001%20Paris!5e0!3m2!1sfr!2sfr!4v1715682000000!5m2!1sfr!2sfr" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        
+        <div class="btn-container">
+            <a href="programme.pdf" class="btn" target="_blank">
+                <i data-lucide="download"></i> Télécharger le Programme (PDF)
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2026 Estée Lauder Companies</p>
+    <p><i data-lucide="accessibility" style="display:inline-block; vertical-align:middle; width:16px;"></i> <strong>Accessibilité :</strong> Formation adaptée aux personnes en situation de handicap (PSH). Contactez-nous pour toute question.</p>
+</div>
+
+<script>
+    // Initialisation des icônes Lucide
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
